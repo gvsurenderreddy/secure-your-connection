@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/onlyNumber.js"></script>
+<script type="text/javascript">
+function check_dd() {
+    if(document.getElementById('f_optionID').value == "ssh_ports") {
+        document.getElementById('hidden_div').style.display = 'block';
+    } else {
+        document.getElementById('hidden_div').style.display = 'none';
+    }
+}
+</script>
+
+</head>
+<body>
+<div id="form-main">
+  <div id="form-div">
+    <form class="form" id="form1" method="POST" action=".">
+
+      <p class="option">
+        <SELECT name="f_option" class="bfeedback-input" id="f_optionID" onchange="check_dd();">
+        <OPTION VALUE="ssh_proxy">Ssh Socks proxy</OPTION>
+        <OPTION VALUE="ssh_ports">Ssh Port forwarding</OPTION>
+        <OPTION VALUE="vpn">VPN</OPTION>
+        </Select>
+      </p>
+      <!-- start mandatory inputs -->
+      <p class="name">
+        <input name="open_port" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" onkeypress="return justNumbers(event);" placeholder="Port that you want to use" id="open_port" />
+      </p>
+      <p class="name">
+        <input name="phone_number" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Phone Number (e.g: +447755000333)" id="phone_number" />
+      </p>
+      <p class="name">
+        <input name="yo_username" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Send YO to..." id="yo_username" />
+      </p>
+      
+      <!-- End mandatory inputs -->
+
+      <!-- START Hidden ssh port forwartding div -->
+      <div id="hidden_div">
+
+      <p class="email">
+        <input name="r_host" type="text" class="validate[required,custom[email]] feedback-input" id="r_host" placeholder="Remote host (IP or dns name)" />
+      </p>
+
+      <p class="email">
+        <input name="r_port" type="text" class="validate[required,custom[email]] feedback-input" id="r_port" placeholder="Remote port" onkeypress="return justNumbers(event);" />
+      </p>
+      
+      </div>
+      <!-- END Hidden ssh port forwartding div -->
+      
+      <div class="submit">
+        <input type="submit" value="SEND" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

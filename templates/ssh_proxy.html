@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div id="form-main">
+  <div id="form-div">
+    
+
+      <div class="submit">
+        <input type="submit" value="SSH SOCKS Proxy" id="result_title"/>
+        <div class="ease"></div>
+      </div>
+      
+      <p class="email">
+        <input name="r_host" type="text" class="feedback-input" value="{{ ssh_host }}" id="r_host" readonly />
+      </p>
+      
+      <p class="email">
+        <input name="username" type="text" class="feedback-input" value="{{ username }}" id="username"  readonly />
+      </p>
+
+      <p class="email">
+        <input name="password" type="text" class="feedback-input" value="{{ password }}" id="password"  readonly />
+      </p>
+
+      <p class="email">
+        <input name="show_command" type="text" class="feedback-input" value="{{ show_command1 }}" id="show_command"  readonly />
+      </p>
+
+
+      <p class="text">
+        <textarea name="comment" class="validate[required,length[6,300]] feedback-input" id="comment" readonly>{{ comment1 }}</textarea>
+      </p>
+      
+      
+    
+  </div>
+
+<h1>{{command2}}</h1>
+<h1>
+
+
+
+</body>
+
